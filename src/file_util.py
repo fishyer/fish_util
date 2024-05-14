@@ -48,6 +48,23 @@ def print_directory_contents(path, dirs=[], files=[], levle=0):
         print("    " * levle + "- ", name)
 
 
+def write_file(file_path, file_content):
+    with open(file_path, "w", encoding="utf-8") as file:
+        file.write(file_content)
+    print("File saved to", file_path)
+
+
+def read_file(file_path):
+    with open(file_path, "r", encoding="utf-8") as file:
+        file_content = file.read()
+    return file_content
+
+
+def clear_file(file_path):
+    open(file_path, "w", encoding="utf-8").close()
+    # print('File cleared:', file_path)
+
+
 def main():
     print(__file__)
     print_directory_contents("/Users/yutianran/MyGithub/fish_util")

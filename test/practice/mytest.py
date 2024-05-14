@@ -1,24 +1,3 @@
-# 我的Python工具库
-
-github地址：[fishyer/fish_util](https://github.com/fishyer/fish_util )
-pypi地址：[fish_util](https://pypi.org/project/fish_util/)
-
-## 介绍
-
-这是我自己编写的一些Python工具库，包括：
-- log_util
-- decorator_util：包括trace_exception、trace_time、trace_args、trace_retry、trace_validate等装饰器
-- file_util
-
-## 安装
-
-```
-pip install fish_util
-```
-
-## 使用示例
-
-```python
 from fish_util.src.log_util import logger
 import fish_util.src.decorator_util as decorator_util
 
@@ -50,8 +29,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
-
-## 输出结果
-
-![](https://yupic.oss-cn-shanghai.aliyuncs.com/202405141752940.png)
