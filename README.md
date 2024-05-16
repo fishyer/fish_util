@@ -9,6 +9,17 @@ pypi地址：[fish_util](https://pypi.org/project/fish_util/)
 - log_util
 - decorator_util：包括trace_exception、trace_time、trace_args、trace_retry、trace_validate等装饰器
 - file_util
+- yaml_util
+- json_util
+- redis_util
+- mysql_util
+- mongo_util
+- oss_util
+- date_util
+- string_util
+- re_util
+- collections_util
+- function_util
 
 ## 安装
 

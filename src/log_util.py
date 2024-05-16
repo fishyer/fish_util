@@ -46,7 +46,8 @@ class FishLogger:
         self.terminal = sys.stdout
         self.log_fd = open(self.log_path, "a+", encoding="utf-8")
         self.has_color = has_color
-        # 输出执行的时间 V1.0.0
+        self.write("")
+        self.print("")
         divider_msg = "###################################################"
         self.warning(divider_msg)
         self.debug(f"path: {self.path}")
