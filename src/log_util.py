@@ -50,10 +50,10 @@ class FishLogger:
         self.print("")
         divider_msg = "###################################################"
         self.warning(divider_msg)
-        self.debug(f"path: {self.path}")
+        # self.debug(f"path: {self.path}")
         self.debug(f"log_path: {self.log_path}")
-        self.debug(f"tag: {self.tag}")
-        self.debug(f"has_color: {self.has_color}")
+        # self.debug(f"tag: {self.tag}")
+        # self.debug(f"has_color: {self.has_color}")
 
     def debug(self, msg):
         self.record("DEBUG", msg)
