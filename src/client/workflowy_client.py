@@ -42,6 +42,10 @@ def get_nodes(inbox: Node, nodes, node_set, recursion=True):
 
 # 添加WF节点
 def add(node: Node, title: str, content: str = None):
+    for i in node:
+        if i.name == title:
+            print(f"Node {title} already exists, skip.")
+            return i
     sub_node = node.create()
     sub_node.edit(title)
     if content:
