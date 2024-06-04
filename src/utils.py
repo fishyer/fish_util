@@ -1,4 +1,6 @@
 # coding=utf-8
+import asyncio
+from playwright.async_api import async_playwright
 import requests
 import json
 import uuid
@@ -6,7 +8,6 @@ import re
 import sys
 import os
 import random
-
 from colorlog import ColoredFormatter
 import logging
 from os.path import abspath, dirname, join
@@ -482,8 +483,8 @@ def get_real_url(url):
         # 在Chromium浏览器中创建一个新的浏览器上下文
         # browser = playwright.chromium.launch()
         browser = playwright.chromium.launch(
-        #    proxy={"server": f"http://{ip}:{port}"}
-           proxy={"server": f"http://127.0.0.1:7890"}
+            #    proxy={"server": f"http://{ip}:{port}"}
+            proxy={"server": f"http://127.0.0.1:7890"}
         )
         context = browser.new_context()
 
@@ -507,10 +508,6 @@ def get_real_url(url):
         context.close()
         browser.close()
         return title
-
-
-import asyncio
-from playwright.async_api import async_playwright
 
 
 async def get_real_url_async(url):
@@ -571,8 +568,6 @@ def save_links(links):
             print(f"index:{i} title:{title} url:{url}")
 
 
-
-
 if __name__ == "__main__":
     # print(getNowDateTime())
     # print(getNowDate())
@@ -592,6 +587,6 @@ if __name__ == "__main__":
     #     return await asyncio.gather(*tasks)
 
     # asyncio.run(fetch_all_urls())
-    ips_content = read_file("/Users/yutianran/Documents/MyPKM/ips.json")
+    ips_content = read_file("assets/ips.json")
     ips = json.loads(ips_content).get("obj")
     print("ips代理数量: " + str(len(ips)))

@@ -5,3 +5,35 @@
 **/.vscode
 **/.git
 **/*.log
+
+**/archive
+**/.vscode
+**/.idea
+**/.DS_Store
+**/.git
+**/cache
+**/__pycache__
+**/node_modules
+**/video
+
+# build output
+dist/
+# generated types
+.astro/
+
+# customed files
+**/node_modules/
+**/__pycache__/
+**/*.log
+**/.DS_Store
+.husky/_
+**/.trash/
+**/cache/
+**/trash/
+**/_data/
+**/MyNotion/
+**/obsidian-omnivore/data.json
+my-docker-compose/chrome_debug/user_data
+**/home/
+**/.ipynb_checkpoints/
+MyNote/.obsidian/workspace.json

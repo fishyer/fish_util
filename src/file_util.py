@@ -49,9 +49,12 @@ def print_directory_contents(path, dirs=[], files=[], levle=0):
 
 
 def write_file(file_path, file_content):
+    # 检查file_path是否存在，不存在则创建
+    if not os.path.exists(os.path.dirname(file_path)):
+        os.makedirs(os.path.dirname(file_path))
     with open(file_path, "w", encoding="utf-8") as file:
         file.write(file_content)
-    print("File saved to", file_path)
+    # print("File saved to", file_path)
 
 
 def read_file(file_path):
