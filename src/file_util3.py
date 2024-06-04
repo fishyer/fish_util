@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 import shutil
 import re
+from fish_util.src.loguru_util import print, debug, info, warning, error
 
 
 # 打印文件路径
@@ -184,7 +185,8 @@ def sure_dir(path):
         os.makedirs(path)
         print(f"创建文件夹成功：{path}")
     else:
-        print(f"文件夹已存在：{path}")
+        # print(f"文件夹已存在：{path}")
+        pass
 
 
 def sure_file(path):
@@ -193,8 +195,9 @@ def sure_file(path):
         return
     if not os.path.exists(path):
         with open(path, "w") as file:
-            file.write("")
-            print(f"创建空白文件成功： {path}")
+            # file.write("")
+            # print(f"创建空白文件成功： {path}")
+            pass
     else:
         print(f"文件已存在： {path}")
 

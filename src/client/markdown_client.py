@@ -1,13 +1,13 @@
 import re
-import fish_util.util.time_util as time_util
+import fish_util.src.time_util as time_util
 import fish_util.src.file_util as file_util
 from fish_util.src.log_util import print
 import arrow
 import pathlib
 import frontmatter
-import dida_client
+import fish_util.src.client.dida_client
 import time
-from dida_client import DidaTask
+from fish_util.src.client.dida_client import DidaTask
 
 
 black_list = ["https://marker.dotalk.cn/"]

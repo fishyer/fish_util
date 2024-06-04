@@ -19,7 +19,7 @@ import sys
 import time
 import inspect
 
-import ez_fish_util.src.decorator_util2 as decorator_util
+import fish_util.src.decorator_util2 as decorator_util
 
 catcher = logger.catch
 
@@ -34,7 +34,7 @@ def my_filter(record):
 
 
 class LoguruLogger:
-    def __init__(self, log_path="log"):
+    def __init__(self, log_path="log/app"):
         # self.log_path = log_path
         check_path(log_path)
         # 移除默认的logger，添加自定义的logger
@@ -45,7 +45,7 @@ class LoguruLogger:
             filter=my_filter,
             # format="<level>[{level}] {time:YYYY-MM-DD HH:mm:ss.SSS} {file}:{line} {function}() | {message}</level>",
             format="<level>[{level}] {time:YYYY-MM-DD HH:mm:ss.SSS} | {message}</level>",
-            colorize=False,
+            colorize=True,
             level="DEBUG",
         )
         # 按级别将日志输出到不同的文件
@@ -166,6 +166,7 @@ warning = default_logger.warning
 error = default_logger.error
 critical = default_logger.critical
 print = default_logger.debug
+cat = default_logger.cat
 
 
 @catcher

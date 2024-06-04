@@ -46,11 +46,18 @@ import calendar
 import time
 import moment
 import inspect
-import loguru_util
+from fish_util.src.loguru_util import (
+    default_logger,
+    print,
+    debug,
+    info,
+    warning,
+    error,
+    critical,
+    cat,
+    catcher,
+)
 
-logutil = loguru_util.LoguruLogger(log_path="alog/my-dockx-app")
-print = logutil.debug
-cat = logutil.cat
 
 date_format = "%Y-%m-%d"
 time_format = "%H:%M:%S"
@@ -159,7 +166,7 @@ class MomentUtil:
 
 
 # 直接运行时
-@loguru_util.catcher
+@catcher
 def main():
     print(f"[run main: {__file__}]")
     # 创建一个datetime对象
@@ -218,7 +225,7 @@ def main():
 
 
 # 外部导入时,主要是被import
-@loguru_util.catcher
+@catcher
 def launch():
     print(f"run launch: {__file__}")
 
