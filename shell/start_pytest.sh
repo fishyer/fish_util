@@ -9,17 +9,17 @@ pwd
 timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
 # pytest -s -v . --clean-alluredir --alluredir=./cache/allure-results
 # 不加 -sv 是为了防止自己的文件中的日志被吞，好像是会被覆盖了
-pytest . --clean-alluredir --alluredir=./cache/$timestamp/allure-results
+pytest test --clean-alluredir --alluredir=./cache/allure/$timestamp/allure-results
 
 # 检查环境变量文件是否存在再复制
 if [ -f environment.properties ]; then
-  cp environment.properties ./cache/$timestamp/allure-results/environment.properties
+  cp environment.properties ./cache/allure/$timestamp/allure-results/environment.properties
 else
   echo "Error: environment.properties does not exist."
 fi
 
 # 生成 Allure 报告
-allure generate -c -o ./cache/$timestamp/allure-report ./cache/$timestamp/allure-results
+allure generate -c -o ./cache/allure/$timestamp/allure-report ./cache/allure/$timestamp/allure-results
 
 # 优雅关闭进程
 echo "Stopping process on port 11136"
@@ -32,7 +32,7 @@ else
 fi
 
 # 使用 nohup 启动 Allure 服务
-nohup allure open ./cache/$timestamp/allure-report -p 11136 > /dev/null 2>&1 &
+nohup allure open ./cache/allure/$timestamp/allure-report -p 11136 > /dev/null 2>&1 &
 echo "Allure server started on port http://localhost:11136."
 
 # 直接查看指定时间戳的报告

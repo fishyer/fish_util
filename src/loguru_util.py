@@ -19,7 +19,7 @@ import sys
 import time
 import inspect
 
-import decorator_util2 as decorator_util
+import ez_fish_util.src.decorator_util2 as decorator_util
 
 catcher = logger.catch
 
@@ -159,6 +159,13 @@ def timing_and_display_args(func):
 
 
 default_logger = LoguruLogger()
+
+debug = default_logger.debug
+info = default_logger.info
+warning = default_logger.warning
+error = default_logger.error
+critical = default_logger.critical
+print = default_logger.debug
 
 
 @catcher
