@@ -37,3 +37,5 @@ my-docker-compose/chrome_debug/user_data
 **/home/
 **/.ipynb_checkpoints/
 MyNote/.obsidian/workspace.json
+
+**/.env
